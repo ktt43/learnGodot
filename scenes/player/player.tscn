@@ -10,7 +10,8 @@ radius = 58.0
 script = ExtResource("1_fdfyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1629713783]
-position = Vector2(2, -37)
+position = Vector2(41, 1)
+rotation = 1.5707964
 texture = ExtResource("1_5pofk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059100588]
@@ -24,18 +25,18 @@ one_shot = true
 [node name="LaserStartPositions" type="Node2D" parent="." unique_id=1966925903]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions" unique_id=1019013704]
-position = Vector2(10, -129)
+position = Vector2(134, 8)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions" unique_id=1221523113]
-position = Vector2(20, -129)
+position = Vector2(136, 17)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions" unique_id=1058476925]
-position = Vector2(31, -129)
+position = Vector2(135, 28)
 
 [node name="GrenadeStartPosition" type="Node2D" parent="." unique_id=2115590341]
 
 [node name="Marker2D" type="Marker2D" parent="GrenadeStartPosition" unique_id=72321421]
-position = Vector2(53, -31)
+position = Vector2(-8, 59)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="grenadeTimer" to="." method="_on_grenade_timer_timeout"]
