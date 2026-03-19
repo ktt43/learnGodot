@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bfqpiobh1vasi"]
+
+[ext_resource type="Texture2D" uid="uid://i5fla7ff243x" path="res://icon.svg" id="1_xb4v1"]
+[ext_resource type="Script" uid="uid://uupr6b0wrlk0" path="res://scenes/logo.gd" id="2_bovvr"]
+
+[node name="Level" type="Node2D" unique_id=1460552307]
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1824073565]
+texture = ExtResource("1_xb4v1")
+region_rect = Rect2(26, 53.5, 72, 25)
+script = ExtResource("2_bovvr")
