@@ -48,6 +48,11 @@ down={
 ]
 }
 
+[layer_names]
+
+2d_navigation/layer_1="Walls"
+2d_navigation/layer_2="Soil"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
