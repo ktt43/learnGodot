@@ -2,12 +2,34 @@
 
 [ext_resource type="Script" uid="uid://uw81ghixgpqk" path="res://scenes/projectiles/laser.gd" id="1_e6ads"]
 [ext_resource type="Texture2D" uid="uid://l3ymcsgvn3wo" path="res://graphics/projectiles/blue.png" id="1_rlgyd"]
+[ext_resource type="Texture2D" uid="uid://c32fci1hqwtou" path="res://graphics/decals/white.png" id="3_cwxws"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6ads"]
 radius = 6.0
 height = 110.0
 
+[sub_resource type="Gradient" id="Gradient_cwxws"]
+colors = PackedColorArray(0, 0, 0.3529412, 0.47058824, 0.13885854, 0.13885854, 0.13885854, 0.31764707)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w364t"]
+gradient = SubResource("Gradient_cwxws")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uxcji"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 20.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.0
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_w364t")
+
 [node name="Laser" type="Area2D" unique_id=1042265886]
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_e6ads")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=574431564]
@@ -16,3 +38,11 @@ texture = ExtResource("1_rlgyd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=324168202]
 shape = SubResource("CapsuleShape2D_e6ads")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1354820449]
+position = Vector2(0, -29)
+amount = 20
+texture = ExtResource("3_cwxws")
+speed_scale = 2.0
+explosiveness = 0.15
+process_material = SubResource("ParticleProcessMaterial_uxcji")

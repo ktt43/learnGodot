@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 # Emit Signal and Position when Player Interacts in Level 
 	if(Input.is_action_just_pressed("primary action") and can_laser):
 		print("SHOT")
+		$LaserStartPositions/GPUParticles2D.emitting = true
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		var player_direction = (get_global_mouse_position()-position).normalized()
@@ -31,7 +32,7 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("secondary action") and can_grenade):
 		var grenade_marker = $GrenadeStartPosition/Marker2D.global_position
 		var pos = $GrenadeStartPosition.get_children()[0].global_position
-		var player_direction = (get_global_mouse_position() - position).normalized()
+		var player_direction = (get_global_mouse_position() - pos).normalized()
 		grenadeThrown.emit(grenade_marker,player_direction)
 		can_grenade = !can_grenade
 		$grenadeTimer.start()

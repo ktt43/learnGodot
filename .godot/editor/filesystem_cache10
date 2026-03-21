@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774025590
+::res://::1774107889
 icon.svg::CompressedTexture2D::623765360091534347::1773845302::1773845309::1::::<><><>0<>0<>8c17041dbe37303c6306dca20e96f6b1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1773846469::0::1::::<><><>0<>0<><>::
 ::res://graphics/::1773853408
@@ -200,9 +200,9 @@ progress.png::CompressedTexture2D::6145304774577591960::1773853408::1773853409::
 ::res://scenes/enemies/::1773894243
 drone.gd::GDScript::2876434091497767176::1773894243::0::1::::<>CharacterBody2D<><>0<>0<><>::
 drone.tscn::PackedScene::5729841301767095113::1773894082::0::1::::<><><>0<>0<><>::uid://bg8mpjkyqr3tk::::res://scenes/enemies/drone.gd<>uid://c4uy0tr4o7snk::::res://graphics/enemies/drone.png
-::res://scenes/levels/::1773955884
+::res://scenes/levels/::1774029045
 level.gd::GDScript::5313497599118806021::1773954841::0::1::::<>Node2D<><>0<>0<><>::
-level.tscn::PackedScene::2771320724416280660::1773955884::0::1::::<><><>0<>0<><>::uid://chx5r8xssrh3j::::res://scenes/levels/level.gd<>uid://cr206ffskxk7o::::res://scenes/objects/gate.tscn<>uid://btwcg50hsu33d::::res://scenes/player/player.tscn
+level.tscn::PackedScene::2771320724416280660::1774029045::0::1::::<><><>0<>0<><>::uid://chx5r8xssrh3j::::res://scenes/levels/level.gd<>uid://cr206ffskxk7o::::res://scenes/objects/gate.tscn<>uid://bm4e6ptkxcgrf::::res://graphics/ground/stones.png<>uid://c577lf6t1yvic::::res://graphics/ground/Mesh.png<>uid://bhrl35wxrrb3j::::res://graphics/decals/moss/moss_1.png<>uid://btwcg50hsu33d::::res://scenes/player/player.tscn<>uid://qnvd7kkd82ck::::res://graphics/decals/moss/moss_2.png<>uid://cmssumvyqkwdp::::res://graphics/decals/moss/moss_5.png<>uid://cklqwwi24v7lg::::res://graphics/tilesets/outside_walls.png<>uid://4t636r3gq7nq::::res://graphics/tilesets/soil.png
 ::res://scenes/objects/::1773938906
 bed.tscn::PackedScene::723616631290203889::1773872300::0::1::::<><><>0<>0<><>::uid://cdb2b8vfwpj25::::res://graphics/objects/bed.png<>uid://cmaivdky454ff::::res://graphics/objects/pillow_large.png<>uid://dikr88aqq4if7::::res://graphics/objects/pillow_small.png
 box.tscn::PackedScene::9103406606547823478::1773893756::0::1::::<><><>0<>0<><>::uid://c250aa35wmxnm::::res://graphics/objects/Box.png

@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cmssumvyqkwdp" path="res://graphics/decals/moss/moss_5.png" id="6_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://cklqwwi24v7lg" path="res://graphics/tilesets/outside_walls.png" id="7_rmjfq"]
 [ext_resource type="Texture2D" uid="uid://4t636r3gq7nq" path="res://graphics/tilesets/soil.png" id="8_7pb6i"]
+[ext_resource type="PackedScene" uid="uid://cwh1x68ve5oy5" path="res://scenes/House/house.tscn" id="11_7pb6i"]
+[ext_resource type="PackedScene" uid="uid://do07wajfikdoq" path="res://scenes/objects/steam_vent.tscn" id="12_xfk5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
 resource_name = "walls"
@@ -85,6 +87,13 @@ tile_set = SubResource("TileSet_8iyoh")
 
 [node name="Gate" parent="." unique_id=992364446 instance=ExtResource("2_b2cq8")]
 position = Vector2(540, -123)
+
+[node name="House" parent="." unique_id=1396716363 instance=ExtResource("11_7pb6i")]
+position = Vector2(250, 2232)
+rotation = 3.1415925
+
+[node name="SteamVent" parent="." unique_id=379875393 instance=ExtResource("12_xfk5q")]
+position = Vector2(-93, 942)
 
 [node name="Player" parent="." unique_id=1035397621 instance=ExtResource("4_xb4v1")]
 position = Vector2(573, 483)
