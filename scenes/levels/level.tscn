@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://4t636r3gq7nq" path="res://graphics/tilesets/soil.png" id="8_7pb6i"]
 [ext_resource type="PackedScene" uid="uid://cwh1x68ve5oy5" path="res://scenes/House/house.tscn" id="11_7pb6i"]
 [ext_resource type="PackedScene" uid="uid://do07wajfikdoq" path="res://scenes/objects/steam_vent.tscn" id="12_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://caxkfe5defb23" path="res://scenes/objects/wall_light.tscn" id="13_qogh7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
 resource_name = "walls"
@@ -103,6 +104,11 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="." unique_id=1329620565]
+
+[node name="wall_light" parent="." unique_id=1796349668 instance=ExtResource("13_qogh7")]
+position = Vector2(816, 1362)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenadeThrown" from="Player" to="." method="_on_player_grenade_thrown"]

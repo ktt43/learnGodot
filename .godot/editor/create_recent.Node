@@ -1,7 +1,9 @@
-GPUParticles2D
+LightOccluder2D
+PointLight2D
 CollisionShape2D
 Sprite2D
 StaticBody2D
+GPUParticles2D
 TileMapLayer
 Area2D
 TileMap
@@ -10,5 +12,3 @@ Camera2D
 Marker2D
 RigidBody2D
 CollisionPolygon2D
-Timer
-CharacterBody2D
