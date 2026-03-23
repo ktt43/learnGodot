@@ -1,5 +1,3 @@
-res://scenes/objects/simple_light.tscn
-res://scenes/House/house.tscn
 res://scenes/levels/level.tscn
-res://scenes/objects/wall_light.tscn
-res://scenes/player/player.tscn
+res://scenes/objects/light_fan_animation.tscn
+res://scenes/projectiles/grenade.tscn
