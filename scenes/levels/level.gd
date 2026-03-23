@@ -13,9 +13,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:	
 	pass
 
-func _on_gate_player_entered_gate(body) -> void:
-	print("Called from Level")
-	print(body)
+func _on_gate_player_entered_gate(_body) -> void:
+	var tween = create_tween()
+	tween.tween_property($Player,"speed",0,.5)
 
 # Listens for Event from Player and Create the instance at the Position that is emitted, then add it to the Level
 func _on_player_laser_shot(pos, direction) -> void:
@@ -32,3 +32,16 @@ func _on_player_grenade_thrown(pos, direction) -> void:
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
 	
+
+
+func _on_house_player_entered() -> void:
+	var tween = get_tree().create_tween()
+	tween.set_parallel(true                                                      )
+	#tween.tween_property($Player, "modulate:a", 0, 1).from(0.5)
+	tween.tween_property($Player/Camera2D,"zoom", Vector2(.8,.8),.5).set_trans(Tween.TRANS_QUAD)
+	
+
+
+func _on_house_player_exited() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D,"zoom", Vector2(.5,.5),.5)
