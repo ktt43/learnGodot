@@ -1,7 +1,6 @@
-res://scenes/House/house.gd
-res://scenes/House/house.tscn
-res://scenes/objects/simple_light.tscn
-res://scenes/objects/wall_light.tscn
-res://scenes/levels/level.gd
 res://scenes/levels/level.tscn
-res://scenes/player/player.gd
+res://scenes/projectiles/laser.tscn
+res://scenes/projectiles/laser.gd
+res://scenes/player/player.tscn
+res://scenes/enemies/drone.gd
+res://scenes/levels/level.gd

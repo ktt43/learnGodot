@@ -46,3 +46,11 @@ texture = ExtResource("3_cwxws")
 speed_scale = 2.0
 explosiveness = 0.15
 process_material = SubResource("ParticleProcessMaterial_uxcji")
+
+[node name="Timer" type="Timer" parent="." unique_id=1111917061]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_laser_time_timeout"]

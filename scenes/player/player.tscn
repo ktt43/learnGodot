@@ -33,6 +33,7 @@ texture = ExtResource("1_5pofk")
 shape = SubResource("CircleShape2D_5pofk")
 
 [node name="Timer" type="Timer" parent="." unique_id=615801413]
+wait_time = 0.216
 one_shot = true
 
 [node name="grenadeTimer" type="Timer" parent="." unique_id=1412350702]

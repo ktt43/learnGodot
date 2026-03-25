@@ -7,3 +7,7 @@ func _process(_delta):
 	velocity = direction * 200
 	
 	move_and_slide()
+
+
+func hit():
+	print("hit")
