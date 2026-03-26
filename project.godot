@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="learn1"
-run/main_scene="uid://bfqpiobh1vasi"
+run/main_scene="uid://bjxv53i4cfmtq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

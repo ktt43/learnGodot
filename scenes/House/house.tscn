@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bxl2qh0hxk22p" path="res://graphics/tilesets/interior.png" id="1_2whkc"]
 [ext_resource type="Script" uid="uid://dpuu7hfc643ph" path="res://scenes/House/house.gd" id="1_305y2"]
 [ext_resource type="PackedScene" uid="uid://o04pyiw508h7" path="res://scenes/objects/simple_light.tscn" id="2_0h42k"]
+[ext_resource type="PackedScene" uid="uid://chenxb3kdn7vr" path="res://scenes/objects/light_fan_animation.tscn" id="4_mapfg"]
+[ext_resource type="PackedScene" uid="uid://caxkfe5defb23" path="res://scenes/objects/wall_light.tscn" id="5_pgi2r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gohj"]
 size = Vector2(2868, 2871)
@@ -258,6 +260,19 @@ position = Vector2(-203, -960)
 [node name="SimpleLight2" parent="." unique_id=1052295424 instance=ExtResource("2_0h42k")]
 position = Vector2(197, 488)
 rotation = 4.712389
+
+[node name="LightFanAnimation" parent="." unique_id=747085732 instance=ExtResource("4_mapfg")]
+position = Vector2(774.99976, 462.99994)
+rotation = -1.5707964
+scale = Vector2(1.402, 1.402)
+autoplay = "default"
+
+[node name="wall_light" parent="." unique_id=1796349668 instance=ExtResource("5_pgi2r")]
+position = Vector2(1286, -385)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=993183239]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

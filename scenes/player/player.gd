@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	
 # Emit Signal and Position when Player Interacts in Level 
 	if(Input.is_action_just_pressed("primary action") and can_laser):
-		print("SHOT")
+		#print("SHOT")
 		$LaserStartPositions/GPUParticles2D.emitting = true
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
