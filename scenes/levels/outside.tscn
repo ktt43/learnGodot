@@ -98,10 +98,12 @@ position = Vector2(-93, 942)
 position = Vector2(529, -157)
 
 [node name="Toilet" parent="." index="3" unique_id=1467261595 instance=ExtResource("13_xqqjy")]
-position = Vector2(1306, 105)
+position = Vector2(1927, 188)
+rotation = 1.5707964
 
 [node name="Crate" parent="." index="4" unique_id=1697481779 instance=ExtResource("14_ex6t8")]
-position = Vector2(1306, 418)
+position = Vector2(1119, 817)
+rotation = 3.1415927
 
 [node name="Drone" parent="." index="5" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
 position = Vector2(552, 817)

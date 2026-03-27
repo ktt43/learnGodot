@@ -22,6 +22,7 @@ func _on_player_laser_shot(pos, direction) -> void:
 	laser.rotation_degrees = rad_to_deg(direction.angle())+90
 	laser.direction = direction
 	$Projectiles.add_child(laser)
+	$UI.update_laser_text()
 	
 	#print($Projectiles.get_children())
 	
@@ -30,6 +31,7 @@ func _on_player_grenade_thrown(pos, direction) -> void:
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)	
+	$UI.update_grenade_text()
 
 func _on_house_player_entered() -> void:
 	var tween = get_tree().create_tween()
