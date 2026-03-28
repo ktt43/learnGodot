@@ -1,3 +1,6 @@
+AnimationPlayer
+ColorRect
+CanvasLayer
 MarginContainer
 TextureProgressBar
 ProgressBar
@@ -6,10 +9,7 @@ VBoxContainer
 Label
 Control
 HBoxContainer
-ColorRect
-CanvasLayer
 Button
 CollisionShape2D
 Area2D
 PointLight2D
-DirectionalLight2D

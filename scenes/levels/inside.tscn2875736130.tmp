@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ci0e776eoycai" path="res://graphics/ground/dirt.png" id="2_086xj"]
 [ext_resource type="TileSet" uid="uid://cpvx341ghn4bw" path="res://scenes/levels/InteriorWalls.tres" id="2_n4crx"]
 [ext_resource type="TileSet" uid="uid://2ql7cwyn5pyx" path="res://scenes/levels/OuterWalls.tres" id="3_71x7e"]
+[ext_resource type="PackedScene" uid="uid://bjxv53i4cfmtq" path="res://scenes/levels/outside.tscn" id="3_jfm54"]
 [ext_resource type="TileSet" uid="uid://c60382u14w127" path="res://scenes/levels/Floor.tres" id="4_71x7e"]
 [ext_resource type="PackedScene" uid="uid://o04pyiw508h7" path="res://scenes/objects/simple_light.tscn" id="6_0kuad"]
 [ext_resource type="PackedScene" uid="uid://chenxb3kdn7vr" path="res://scenes/objects/light_fan_animation.tscn" id="6_j5d1l"]
@@ -19,6 +20,7 @@ size = Vector2(122, 846)
 
 [node name="Inside" unique_id=1460552307 instance=ExtResource("1_8ht0b")]
 script = ExtResource("2_4iit3")
+outside_level_scene = ExtResource("3_jfm54")
 
 [node name="Ground" parent="." index="1" unique_id=769820050]
 metadata/_edit_lock_ = true

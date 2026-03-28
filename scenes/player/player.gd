@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 		$Timer.start()
 		
 	if(Input.is_action_just_pressed("secondary action") and can_grenade and Globals.grenade_amount>0):
-		Globals.grenade_amount -=1
+		Globals.grenade_amount -= 1
 		var grenade_marker = $GrenadeStartPosition/Marker2D.global_position
 		var pos = $GrenadeStartPosition.get_children()[0].global_position
 		var player_direction = (get_global_mouse_position() - pos).normalized()
