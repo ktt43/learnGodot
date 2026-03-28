@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b20bams2spw5l" path="res://scenes/objects/toilet.tscn" id="13_xqqjy"]
 [ext_resource type="PackedScene" uid="uid://cx13680pleipf" path="res://scenes/objects/crate.tscn" id="14_ex6t8"]
 [ext_resource type="PackedScene" uid="uid://cnvtwcmhphvor" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
+[ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="16_x30qc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
 resource_name = "walls"
@@ -107,5 +108,8 @@ rotation = 3.1415927
 
 [node name="Drone" parent="." index="5" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
 position = Vector2(552, 817)
+
+[node name="Item" parent="." index="8" unique_id=1997271300 instance=ExtResource("16_x30qc")]
+position = Vector2(1014, 252)
 
 [connection signal="player_entered_gate" from="Ground/Gate" to="." method="_on_gate_player_entered_gate"]

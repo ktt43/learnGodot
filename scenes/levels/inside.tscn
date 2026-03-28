@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://i868dgn31gmm" path="res://graphics/lights/textures/circle.png" id="8_7r4nv"]
 [ext_resource type="Texture2D" uid="uid://xmat45eljbrc" path="res://graphics/lights/overlays/lattice.png" id="9_tkhku"]
 [ext_resource type="PackedScene" uid="uid://caxkfe5defb23" path="res://scenes/objects/wall_light.tscn" id="10_7r4nv"]
+[ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="14_jfm54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4nv"]
 size = Vector2(122, 846)
@@ -124,5 +125,8 @@ rotation = 1.5707964
 scale = Vector2(1.8865032, 1.8865031)
 texture = ExtResource("9_tkhku")
 metadata/_edit_lock_ = true
+
+[node name="Item" parent="." index="7" unique_id=1997271300 instance=ExtResource("14_jfm54")]
+position = Vector2(4098, -83)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
