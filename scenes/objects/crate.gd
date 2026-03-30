@@ -1,4 +1,4 @@
 extends genericObject
 
 func hit():
-	print("hit")
+	print(current_direction)

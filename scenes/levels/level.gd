@@ -9,8 +9,6 @@ var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn"
 func _ready() -> void:
 	pass
 	
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	
 	pass
@@ -43,8 +41,6 @@ func _on_house_player_exited() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property($Player/Camera2D,"zoom", Vector2(.5,.5),.5)
 	
-
-
-func _on_player_update_stats() -> void:
-	$UI.update_laser_text()
-	$UI.update_grenade_text()
+#func _on_player_update_stats() -> void:
+	#$UI.update_laser_text()
+	#$UI.update_grenade_text()
