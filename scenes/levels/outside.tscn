@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://4t636r3gq7nq" path="res://graphics/tilesets/soil.png" id="8_uaeil"]
 [ext_resource type="PackedScene" uid="uid://cwh1x68ve5oy5" path="res://scenes/House/house.tscn" id="9_bjulg"]
 [ext_resource type="PackedScene" uid="uid://do07wajfikdoq" path="res://scenes/objects/steam_vent.tscn" id="10_gd7nx"]
-[ext_resource type="PackedScene" uid="uid://b20bams2spw5l" path="res://scenes/objects/toilet.tscn" id="13_xqqjy"]
 [ext_resource type="PackedScene" uid="uid://cx13680pleipf" path="res://scenes/objects/crate.tscn" id="14_ex6t8"]
 [ext_resource type="PackedScene" uid="uid://cnvtwcmhphvor" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
 [ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="16_x30qc"]
@@ -95,21 +94,17 @@ metadata/_edit_lock_ = true
 [node name="SteamVent" parent="Ground" parent_id_path=PackedInt32Array(769820050) index="8" unique_id=379875393 instance=ExtResource("10_gd7nx")]
 position = Vector2(-93, 942)
 
-[node name="Gate" parent="Ground" parent_id_path=PackedInt32Array(769820050) index="9" unique_id=992364446 instance=ExtResource("2_x73sx")]
+[node name="Gate" parent="." index="1" unique_id=992364446 instance=ExtResource("2_x73sx")]
 position = Vector2(529, -157)
 
-[node name="Toilet" parent="." index="3" unique_id=1467261595 instance=ExtResource("13_xqqjy")]
-position = Vector2(1927, 188)
-rotation = 1.5707964
+[node name="Drone" parent="." index="4" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
+position = Vector2(1403, -288)
 
-[node name="Crate" parent="." index="4" unique_id=1697481779 instance=ExtResource("14_ex6t8")]
-position = Vector2(1119, 817)
-rotation = 3.1415927
-
-[node name="Drone" parent="." index="5" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
-position = Vector2(552, 817)
-
-[node name="Item" parent="." index="8" unique_id=1997271300 instance=ExtResource("16_x30qc")]
+[node name="Item" parent="." index="7" unique_id=1997271300 instance=ExtResource("16_x30qc")]
 position = Vector2(1014, 252)
 
-[connection signal="player_entered_gate" from="Ground/Gate" to="." method="_on_gate_player_entered_gate"]
+[node name="Crate" parent="." index="9" unique_id=1697481779 instance=ExtResource("14_ex6t8")]
+position = Vector2(1563, 491)
+rotation = 1.5707964
+
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

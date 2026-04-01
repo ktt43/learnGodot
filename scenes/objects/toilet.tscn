@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0i63qq28ftd4" path="res://scenes/itemContainer/generic_object.tscn" id="1_sy2pa"]
 [ext_resource type="Script" uid="uid://22xm1bdhkobp" path="res://scenes/objects/toilet.gd" id="2_gxs1e"]
 [ext_resource type="Texture2D" uid="uid://s08ia02fx4gk" path="res://graphics/objects/toilet.png" id="2_y83tn"]
+[ext_resource type="Texture2D" uid="uid://bjwimb5e8ciwl" path="res://graphics/objects/lid.png" id="4_2asns"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gxs1e"]
 radius = 109.165016
@@ -10,8 +11,12 @@ radius = 109.165016
 [node name="Toilet" unique_id=1467261595 instance=ExtResource("1_sy2pa")]
 script = ExtResource("2_gxs1e")
 
-[node name="Sprite2D" parent="." index="0" unique_id=1166854691]
+[node name="BaseSprite" parent="." index="0" unique_id=1166854691]
 texture = ExtResource("2_y83tn")
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=856449073]
+[node name="LidSprite" parent="." index="1" unique_id=310274680]
+position = Vector2(0, 35)
+texture = ExtResource("4_2asns")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=856449073]
 shape = SubResource("CircleShape2D_gxs1e")

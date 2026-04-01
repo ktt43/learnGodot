@@ -1,6 +1,7 @@
 extends LevelParent
 
 func _ready() -> void:
+	super._ready()
 	$Ground/House.player_entered.connect(_on_house_player_entered)
 	
 

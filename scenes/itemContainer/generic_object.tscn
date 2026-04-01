@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b1lvrl5cu3maq" path="res://scenes/itemContainer/generic_object.gd" id="1_q16p7"]
 
-[node name="GenericObject" type="StaticBody2D" unique_id=1697481779]
+[node name="GenericObject" type="StaticBody2D" unique_id=1697481779 groups=["Container"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_q16p7")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1166854691]
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=1166854691]
+
+[node name="LidSprite" type="Sprite2D" parent="." unique_id=310274680]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=856449073]
+
+[node name="SpawnPositions" type="Node2D" parent="." unique_id=2041667794]

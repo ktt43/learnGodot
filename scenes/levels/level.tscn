@@ -7,9 +7,9 @@
 [node name="Level" type="Node2D" unique_id=1460552307]
 script = ExtResource("1_b2cq8")
 
-[node name="UI" parent="." unique_id=1794477840 instance=ExtResource("3_b2cq8")]
-
 [node name="Ground" type="Node2D" parent="." unique_id=769820050]
+
+[node name="Items" type="Node2D" parent="." unique_id=1416586334]
 
 [node name="Projectiles" type="Node2D" parent="." unique_id=1329620565]
 metadata/_edit_lock_ = true
@@ -22,6 +22,8 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="Lights" type="Node2D" parent="." unique_id=295823815]
+
+[node name="UI" parent="." unique_id=1794477840 instance=ExtResource("3_b2cq8")]
 
 [connection signal="grenadeThrown" from="Player" to="." method="_on_player_grenade_thrown"]
 [connection signal="laserShot" from="Player" to="." method="_on_player_laser_shot"]
