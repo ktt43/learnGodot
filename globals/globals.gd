@@ -11,6 +11,7 @@ var laser_amount = 20:
 		laser_amount=value
 		stat_change.emit()
 		#print("new Laser", laser_amount)
+		
 var grenade_amount = 3:
 	get:
 		#print(grenade_amount)

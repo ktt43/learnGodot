@@ -12,9 +12,12 @@ var red: Color = Color(.9,0,0,1)
 @onready var health_bar: TextureProgressBar = $MarginContainer/TextureProgressBar
 
 func _ready() -> void:
+	update_stat_text()
 	Globals.connect("stat_change", update_stat_text)
+
 	
 func update_laser_text():
+
 	laserLabel.text = str(Globals.laser_amount)
 	update_color(Globals.laser_amount,laserLabel,laserIcon)
 	

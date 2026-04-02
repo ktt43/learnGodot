@@ -9,6 +9,7 @@
 radius = 109.165016
 
 [node name="Toilet" unique_id=1467261595 instance=ExtResource("1_sy2pa")]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("2_gxs1e")
 
 [node name="BaseSprite" parent="." index="0" unique_id=1166854691]
@@ -20,3 +21,5 @@ texture = ExtResource("4_2asns")
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=856449073]
 shape = SubResource("CircleShape2D_gxs1e")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(2041667794) index="0" unique_id=1740983822]

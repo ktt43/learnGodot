@@ -11,9 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://5viyv83sl3ni" path="res://graphics/lights/overlays/infrastructure.png" id="7_6serm"]
 [ext_resource type="Texture2D" uid="uid://ptdhne6hcuoo" path="res://graphics/lights/overlays/hole.png" id="8_0kuad"]
 [ext_resource type="Texture2D" uid="uid://i868dgn31gmm" path="res://graphics/lights/textures/circle.png" id="8_7r4nv"]
+[ext_resource type="PackedScene" uid="uid://b20bams2spw5l" path="res://scenes/objects/toilet.tscn" id="9_efnym"]
 [ext_resource type="Texture2D" uid="uid://xmat45eljbrc" path="res://graphics/lights/overlays/lattice.png" id="9_tkhku"]
 [ext_resource type="PackedScene" uid="uid://caxkfe5defb23" path="res://scenes/objects/wall_light.tscn" id="10_7r4nv"]
-[ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="14_jfm54"]
+[ext_resource type="PackedScene" uid="uid://cx13680pleipf" path="res://scenes/objects/crate.tscn" id="10_yj2co"]
+[ext_resource type="PackedScene" uid="uid://kkr4inenqhyv" path="res://scenes/objects/bed.tscn" id="11_fa7mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4nv"]
 size = Vector2(122, 846)
@@ -21,7 +23,7 @@ size = Vector2(122, 846)
 [node name="Inside" unique_id=1460552307 instance=ExtResource("1_8ht0b")]
 script = ExtResource("2_4iit3")
 
-[node name="Ground" parent="." index="1" unique_id=769820050]
+[node name="Ground" parent="." index="0" unique_id=769820050]
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" index="0" unique_id=995091283]
@@ -73,7 +75,32 @@ position = Vector2(3741.0002, 2443)
 rotation = -6.2831855
 scale = Vector2(0.6768059, 0.81719834)
 
-[node name="Player" parent="." index="3" unique_id=1035397621]
+[node name="Toilet" parent="Ground" index="11" unique_id=1467261595 instance=ExtResource("9_efnym")]
+position = Vector2(3220.0002, -1546)
+
+[node name="Crate" parent="Ground" index="12" unique_id=1697481779 instance=ExtResource("10_yj2co")]
+position = Vector2(3136, -862)
+rotation = -1.5707964
+
+[node name="Crate2" parent="Ground" index="13" unique_id=924881094 instance=ExtResource("10_yj2co")]
+position = Vector2(3291.9998, 1563)
+
+[node name="Crate5" parent="Ground" index="14" unique_id=1759427175 instance=ExtResource("10_yj2co")]
+position = Vector2(4287, 1563)
+
+[node name="Crate3" parent="Ground" index="15" unique_id=1277568350 instance=ExtResource("10_yj2co")]
+position = Vector2(1923, -565)
+rotation = 1.5707964
+
+[node name="Crate4" parent="Ground" index="16" unique_id=1194905282 instance=ExtResource("10_yj2co")]
+position = Vector2(449, -546.00006)
+rotation = 1.5707964
+
+[node name="Bed" parent="." index="1" unique_id=2006836620 instance=ExtResource("11_fa7mw")]
+position = Vector2(4517, -1149)
+rotation = -1.5707964
+
+[node name="Player" parent="." index="4" unique_id=1035397621]
 position = Vector2(4451, 400)
 metadata/_edit_group_ = true
 
@@ -81,12 +108,12 @@ metadata/_edit_group_ = true
 texture = ExtResource("8_7r4nv")
 texture_scale = 0.41
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4" unique_id=1527754662]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5" unique_id=1527754662]
 color = Color(0.5954878, 0.33669442, 0.1607436, 1)
 blend_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="ExitGateArea" type="Area2D" parent="." index="5" unique_id=1857287483]
+[node name="ExitGateArea" type="Area2D" parent="." index="6" unique_id=1857287483]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0" unique_id=658134130]
 position = Vector2(4952, 389)
@@ -125,8 +152,5 @@ rotation = 1.5707964
 scale = Vector2(1.8865032, 1.8865031)
 texture = ExtResource("9_tkhku")
 metadata/_edit_lock_ = true
-
-[node name="Item" parent="." index="7" unique_id=1997271300 instance=ExtResource("14_jfm54")]
-position = Vector2(4098, -83)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

@@ -24,7 +24,6 @@ color_ramp = SubResource("GradientTexture1D_x0mrg")
 
 [node name="SteamVent" type="StaticBody2D" unique_id=379875393]
 collision_layer = 32
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=832482940]
 shape = SubResource("CircleShape2D_2mcvv")

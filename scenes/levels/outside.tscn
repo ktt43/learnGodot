@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://do07wajfikdoq" path="res://scenes/objects/steam_vent.tscn" id="10_gd7nx"]
 [ext_resource type="PackedScene" uid="uid://cx13680pleipf" path="res://scenes/objects/crate.tscn" id="14_ex6t8"]
 [ext_resource type="PackedScene" uid="uid://cnvtwcmhphvor" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
+[ext_resource type="PackedScene" uid="uid://b20bams2spw5l" path="res://scenes/objects/toilet.tscn" id="16_uaeil"]
 [ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="16_x30qc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
@@ -97,14 +98,17 @@ position = Vector2(-93, 942)
 [node name="Gate" parent="." index="1" unique_id=992364446 instance=ExtResource("2_x73sx")]
 position = Vector2(529, -157)
 
-[node name="Drone" parent="." index="4" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
-position = Vector2(1403, -288)
-
-[node name="Item" parent="." index="7" unique_id=1997271300 instance=ExtResource("16_x30qc")]
-position = Vector2(1014, 252)
-
-[node name="Crate" parent="." index="9" unique_id=1697481779 instance=ExtResource("14_ex6t8")]
-position = Vector2(1563, 491)
+[node name="Crate" parent="." index="2" unique_id=1697481779 instance=ExtResource("14_ex6t8")]
+position = Vector2(1687, 726)
 rotation = 1.5707964
+
+[node name="Toilet" parent="." index="3" unique_id=1467261595 instance=ExtResource("16_uaeil")]
+position = Vector2(1344, 60)
+
+[node name="Drone" parent="." index="6" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
+position = Vector2(-856, 1097)
+
+[node name="Item" parent="." index="10" unique_id=1997271300 instance=ExtResource("16_x30qc")]
+position = Vector2(1014, 252)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

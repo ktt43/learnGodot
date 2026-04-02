@@ -7,6 +7,8 @@
 [node name="Level" type="Node2D" unique_id=1460552307]
 script = ExtResource("1_b2cq8")
 
+[node name="Decals" type="Node2D" parent="." unique_id=1006524447]
+
 [node name="Ground" type="Node2D" parent="." unique_id=769820050]
 
 [node name="Items" type="Node2D" parent="." unique_id=1416586334]
