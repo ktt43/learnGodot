@@ -205,6 +205,9 @@ _data = {
 &"RedLightBlink": SubResource("Animation_2die0")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqjs3"]
+radius = 98.50888
+
 [node name="Grenade" type="RigidBody2D" unique_id=641151975]
 collision_layer = 8
 collision_mask = 15
@@ -235,3 +238,10 @@ color = Color(0.7742521, 0.3874542, 0.08020673, 1)
 energy = 0.0
 texture = ExtResource("4_oqjs3")
 texture_scale = 0.03
+
+[node name="BlastRadius" type="Area2D" parent="." unique_id=1794031102]
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius" unique_id=722893949]
+shape = SubResource("CircleShape2D_oqjs3")

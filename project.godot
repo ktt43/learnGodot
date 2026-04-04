@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 Globals="*uid://doh8nhyjweuyt"
 TransitionLayer="*uid://dyj02rwjgbdeq"
 
+[global_group]
+
+Entity=""
+Scouts=""
+Container=""
+
 [input]
 
 left={

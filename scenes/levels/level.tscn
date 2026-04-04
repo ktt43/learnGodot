@@ -8,8 +8,12 @@
 script = ExtResource("1_b2cq8")
 
 [node name="Decals" type="Node2D" parent="." unique_id=1006524447]
+z_index = -1
 
 [node name="Ground" type="Node2D" parent="." unique_id=769820050]
+z_index = -2
+
+[node name="Infestation" type="Node2D" parent="." unique_id=1426179278]
 
 [node name="Items" type="Node2D" parent="." unique_id=1416586334]
 
@@ -22,6 +26,8 @@ position = Vector2(573, 483)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1352871557]
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1518736195]
 
 [node name="Lights" type="Node2D" parent="." unique_id=295823815]
 

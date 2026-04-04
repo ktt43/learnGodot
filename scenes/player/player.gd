@@ -18,7 +18,8 @@ func _process(_delta: float) -> void:
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed
 	move_and_slide()
-	
+	Globals.player_pos = global_position
+
 	#rotate
 	look_at(get_global_mouse_position())
 	
@@ -48,3 +49,6 @@ func _on_timer_timeout() -> void:
 
 func _on_grenade_timer_timeout() -> void:
 	can_grenade = !can_grenade
+
+func hit():
+	print("Player hit")	

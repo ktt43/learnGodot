@@ -20,7 +20,7 @@ color = Color(1, 0.40784314, 1, 0.4627451)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gmlin"]
 polygon = PackedVector2Array(-44, -41, -27, -52, -11, -56, 7, -58, 29, -60, 42, -46, 53, -31, 63, -27, 76, -17, 82, -8, 94, -10, 106, -1, 118, 1, 127, 4, 129, 10, 133, 7, 136, 13, 138, 22, 136, 30, 132, 34, 127, 31, 123, 31, 126, 36, 117, 38, 111, 35, 108, 43, 103, 46, 99, 45, 99, 51, 96, 53, 87, 53, 79, 53, 71, 53, 67, 53, 64, 49, 63, 46, 66, 43, 63, 42, 54, 42, 48, 42, 41, 42, 39, 45, 33, 48, 27, 50, 21, 52, 14, 57, 8, 59, 1, 60, -9, 60, -16, 60, -22, 59, -28, 57, -31, 54, -32, 50, -35, 46, -38, 41, -39, 38, -41, 34, -44, 32, -48, 28, -49, 23, -47, 20, -48, 17, -52, 14, -54, 10, -55, 3, -57, -6, -58, -11, -57, -15, -54, -21, -50, -27, -48, -33, -47, -38)
 
-[node name="Player" type="CharacterBody2D" unique_id=575698262]
+[node name="Player" type="CharacterBody2D" unique_id=575698262 groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_fdfyx")
 
@@ -32,7 +32,7 @@ texture = ExtResource("1_5pofk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059100588]
 shape = SubResource("CircleShape2D_5pofk")
 
-[node name="Timer" type="Timer" parent="." unique_id=615801413]
+[node name="Timer" type="Timer" parent="." unique_id=615801413 groups=["Entity"]]
 wait_time = 0.216
 one_shot = true
 
@@ -55,11 +55,11 @@ emitting = false
 texture = ExtResource("3_gmlin")
 lifetime = 0.15000000000000002
 one_shot = true
+explosiveness = 0.73
 visibility_rect = Rect2(-100, -100, 190.11, 200)
 process_material = SubResource("ParticleProcessMaterial_gmlin")
 
 [node name="GrenadeStartPosition" type="Node2D" parent="." unique_id=2115590341]
-visible = false
 
 [node name="Marker2D" type="Marker2D" parent="GrenadeStartPosition" unique_id=72321421]
 position = Vector2(-8, 59)
