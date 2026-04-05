@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://ilnkvffujm7v"]
 
+[ext_resource type="Shader" uid="uid://dyu84khm5r8gq" path="res://scenes/enemies/scout.gdshader" id="1_08kc0"]
 [ext_resource type="Texture2D" uid="uid://dreuswnjv01po" path="res://graphics/enemies/scout.png" id="1_i70sm"]
 [ext_resource type="Script" uid="uid://0b8rk7o6xchu" path="res://scenes/enemies/scout.gd" id="1_ns734"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08kc0"]
+shader = ExtResource("1_08kc0")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns734"]
 radius = 50.039986
@@ -15,6 +21,7 @@ collision_mask = 11
 script = ExtResource("1_ns734")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1240933090]
+material = SubResource("ShaderMaterial_08kc0")
 position = Vector2(36, 24)
 rotation = 1.5707964
 texture = ExtResource("1_i70sm")
@@ -36,6 +43,10 @@ position = Vector2(122, 15)
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions" unique_id=2142651666]
 position = Vector2(122, -31)
 
-[node name="LaserCooldown" type="Timer" parent="." unique_id=834028456]
+[node name="Node" type="Node" parent="." unique_id=1031975829]
 
-[node name="DamageCooldown" type="Timer" parent="." unique_id=1797802096]
+[node name="LaserCooldown" type="Timer" parent="Node" unique_id=834028456]
+
+[node name="DamageCooldown" type="Timer" parent="Node" unique_id=1797802096]
+wait_time = 0.5
+one_shot = true

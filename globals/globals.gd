@@ -23,10 +23,23 @@ var grenade_amount = 3:
 		grenade_amount=value
 		stat_change.emit()
 		
+var player_vulnerable: bool = true		
 var health = 20:
 	get:
 		#print(health)
 		return health
 	set(value):
-		health = value
+		if player_vulnerable:
+			health = value
+			player_vulnerable = false
+			player_vulnerable_timer()
+		#Player can always pick up health, even if they are invulnerable. Max Health is 100
+		elif value > health:
+			health = min(value, 100)
+		
 		stat_change.emit()
+
+
+func player_vulnerable_timer():
+	await get_tree().create_timer(0.5).timeout
+	player_vulnerable = true

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://caxkfe5defb23" path="res://scenes/objects/wall_light.tscn" id="10_7r4nv"]
 [ext_resource type="PackedScene" uid="uid://cx13680pleipf" path="res://scenes/objects/crate.tscn" id="10_yj2co"]
 [ext_resource type="PackedScene" uid="uid://kkr4inenqhyv" path="res://scenes/objects/bed.tscn" id="11_fa7mw"]
+[ext_resource type="PackedScene" uid="uid://c8cexp3jx55br" path="res://scenes/player/girl_model.tscn" id="18_fa7mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r4nv"]
 size = Vector2(122, 846)
@@ -24,10 +25,7 @@ size = Vector2(122, 846)
 [node name="Inside" unique_id=1460552307 instance=ExtResource("1_8ht0b")]
 script = ExtResource("2_4iit3")
 
-[node name="Decals" parent="." index="0" unique_id=1006524447]
-z_index = -1
-
-[node name="Sprite2D" type="Sprite2D" parent="Decals" index="0" unique_id=3004921]
+[node name="Sprite2D" type="Sprite2D" parent="Decals" parent_id_path=PackedInt32Array(1006524447) index="0" unique_id=3004921]
 modulate = Color(0.39145157, 0.2233342, 0.12691748, 0.5568628)
 position = Vector2(3849, -375)
 texture = ExtResource("3_yj2co")
@@ -37,7 +35,6 @@ position = Vector2(4517, -1149)
 rotation = -1.5707964
 
 [node name="Ground" parent="." index="2" unique_id=769820050]
-z_index = -2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -122,7 +119,7 @@ metadata/_edit_lock_ = true
 position = Vector2(4952, 389)
 shape = SubResource("RectangleShape2D_7r4nv")
 
-[node name="Player" parent="." index="7" unique_id=1035397621]
+[node name="Player" parent="." index="8" unique_id=1035397621]
 position = Vector2(4451, 400)
 metadata/_edit_group_ = true
 
@@ -130,7 +127,7 @@ metadata/_edit_group_ = true
 texture = ExtResource("8_7r4nv")
 texture_scale = 0.41
 
-[node name="Lights" parent="." index="8" unique_id=295823815]
+[node name="Lights" parent="." index="10" unique_id=295823815]
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" unique_id=747085732 instance=ExtResource("6_j5d1l")]
@@ -166,5 +163,9 @@ rotation = 1.5707964
 scale = Vector2(1.8865032, 1.8865031)
 texture = ExtResource("9_tkhku")
 metadata/_edit_lock_ = true
+
+[node name="girlModel" parent="." index="12" unique_id=2039751203 instance=ExtResource("18_fa7mw")]
+position = Vector2(4146, 459)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

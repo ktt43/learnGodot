@@ -51,4 +51,4 @@ func _on_grenade_timer_timeout() -> void:
 	can_grenade = !can_grenade
 
 func hit():
-	print("Player hit")	
+	Globals.health -= 20

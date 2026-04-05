@@ -16,7 +16,7 @@ func _on_timer_timeout():
 func _on_body_entered(body: Node2D) -> void:
 	if "hit" in body:
 		body.hit()
-		print(body);
+		#print(body);
 	queue_free()
 
 
