@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cy1ylvn36ufdy" path="res://scenes/enemies/bug.gd" id="1_jahts"]
 [ext_resource type="Texture2D" uid="uid://bwjggyoeyt6yn" path="res://graphics/enemies/bug/attack/00010.png" id="1_xtffu"]
+[ext_resource type="Shader" uid="uid://2tdaqquf6b0w" path="res://scenes/enemies/bug.gdshader" id="2_abc4i"]
 [ext_resource type="Texture2D" uid="uid://cyd6ybcobvtd0" path="res://graphics/enemies/bug/attack/00011.png" id="2_jahts"]
 [ext_resource type="Texture2D" uid="uid://ji2yholyav6" path="res://graphics/enemies/bug/attack/00012.png" id="3_abc4i"]
 [ext_resource type="Texture2D" uid="uid://cw54qw00733h3" path="res://graphics/enemies/bug/attack/00013.png" id="4_xww0a"]
@@ -31,6 +32,12 @@
 [ext_resource type="Texture2D" uid="uid://c5n1lr5nu15cr" path="res://graphics/enemies/bug/walk/00006.png" id="28_88uy3"]
 [ext_resource type="Texture2D" uid="uid://txx7daj3tpsi" path="res://graphics/enemies/bug/walk/00007.png" id="29_5u6gl"]
 [ext_resource type="Texture2D" uid="uid://dqibisbyfu7cd" path="res://graphics/enemies/bug/walk/00008.png" id="30_8phhj"]
+[ext_resource type="Texture2D" uid="uid://bhhqw8qhcgpk1" path="res://graphics/explosions/grunge.png" id="33_xww0a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xww0a"]
+shader = ExtResource("2_abc4i")
+shader_parameter/color = Color(0.9506616, 0.4598139, 0.5642715, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps8cy"]
 animations = [{
@@ -136,27 +143,55 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtffu"]
-radius = 737.46185
+radius = 1020.1959
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jahts"]
 radius = 367.29553
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8llbs"]
-radius = 122.0
-height = 476.0
+radius = 158.0
+height = 538.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uc11a"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_ey6sa"]
+_data = [Vector2(0.0154440105, 0.978896), 0.0, 0.0, 0, 0, Vector2(0.996139, 0.3985389), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fik3"]
+curve = SubResource("Curve_ey6sa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aa7ts"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 125.0
+initial_velocity_max = 390.91
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.62
+scale_curve = SubResource("CurveTexture_5fik3")
+anim_offset_max = 1.0
 
 [node name="Bug" type="CharacterBody2D" unique_id=2121517768 groups=["Entity"]]
-rotation = 1.5707964
+scale = Vector2(0.4, 0.4)
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_jahts")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=541148246]
+material = SubResource("ShaderMaterial_xww0a")
 position = Vector2(0, -1.5258789e-05)
+rotation = 1.5707964
 scale = Vector2(0.2755, 0.27549997)
 sprite_frames = SubResource("SpriteFrames_ps8cy")
 animation = &"Walk"
-autoplay = "Walk"
 
 [node name="NoticeArea2D" type="Area2D" parent="." unique_id=1550471706]
 collision_layer = 16
@@ -171,6 +206,25 @@ collision_layer = 16
 shape = SubResource("CircleShape2D_jahts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1021374492]
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8llbs")
 
 [node name="AttackCooldown" type="Timer" parent="." unique_id=158559263]
+one_shot = true
+
+[node name="HitCooldown" type="Timer" parent="." unique_id=157024595]
+wait_time = 0.2
+one_shot = true
+
+[node name="Particles" type="Node2D" parent="." unique_id=1230458751]
+
+[node name="HitParticles" type="GPUParticles2D" parent="Particles" unique_id=388199975]
+modulate = Color(5.390644e-06, 0.9181877, 0.41249463, 1)
+material = SubResource("CanvasItemMaterial_uc11a")
+emitting = false
+amount = 50
+texture = ExtResource("33_xww0a")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.37
+process_material = SubResource("ParticleProcessMaterial_aa7ts")

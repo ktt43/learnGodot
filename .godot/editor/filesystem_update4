@@ -1,7 +1,8 @@
+res://scenes/enemies/bug.gd
+res://scenes/enemies/bug.tscn
 res://scenes/levels/Floor.tres
 res://scenes/levels/InteriorWalls.tres
 res://scenes/levels/OuterWalls.tres
 res://scenes/enemies/scout.gdshader
-res://scenes/enemies/bug.tscn
-res://scenes/enemies/bug.gd
-res://scenes/levels/outside.tscn
+res://scenes/levels/inside.tscn
+res://scenes/enemies/bug.gdshader

@@ -1,3 +1,5 @@
+GPUParticles2D
+Node2D
 Timer
 CollisionShape2D
 Area2D
@@ -9,6 +11,5 @@ Skeleton2D
 AnimationPlayer
 Sprite2D
 Marker2D
-Node2D
 PointLight2D
 ColorRect

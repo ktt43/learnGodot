@@ -5,6 +5,7 @@ var inNoticeArea = false
 var inAttackArea = false
 var speed = 300
 var vulnerable: bool = true
+var health = 100
 
 func _ready():
 	$AttackCooldown.timeout.connect(_onAttackTimerTimeout)
@@ -12,29 +13,52 @@ func _ready():
 	$NoticeArea2D.body_exited.connect(_onNoticeAreaBodyExited)
 	$AttackArea2D.body_entered.connect(_onAttackAreaBodyEntered)
 	$AttackArea2D.body_exited.connect(_onAttackAreaBodyExited)
+	$AnimatedSprite2D.animation_finished.connect(_onAnimationFinished)
+	$HitCooldown.timeout.connect(_onHitCooldownTimeout)
+
+	$AnimatedSprite2D.material = $AnimatedSprite2D.material.duplicate()
 
 func _process(_delta: float) -> void:
-	if(inNoticeArea):
+	if(inAttackArea):
+		attack()
+	elif (inNoticeArea):
 		look_at(Globals.player_pos)
 		move();
-		if(inAttackArea):
-			attack()
+	
 
 func move() -> void:
-	print("moving")
+	# print("moving")
 	var direction = (Globals.player_pos - position).normalized()
 	velocity = direction * speed
+	$AnimatedSprite2D.play("Walk")
 	move_and_slide()
 
 func attack():
-	print("attacking")
-	$AttackCooldown.start()
-	if(inAttackArea and !isAttackOnCooldown):
-		$AnimatedSprite2D.animation = "Attack"
+	if(!isAttackOnCooldown):
+		print("Attacking")
+		$AttackCooldown.start()
+		$AnimatedSprite2D.play("Attack")
+		#should call onAnimationFinished here
 		isAttackOnCooldown = true
-		Globals.health -= 10
+		
 	
+func hit():
+	if(vulnerable):
+		print("Hit")
+		$AnimatedSprite2D.material.set_shader_parameter("progress", .5)
+		$Particles/HitParticles.emitting = true
+		vulnerable = false
+		$HitCooldown.start()
+		health -= 25
+		if(health <= 0):
+			await get_tree().create_timer(0.5).timeout
+			queue_free(	)
 
+func _onAnimationFinished():
+	print("Animation finished")
+	if(inAttackArea):
+		print(inAttackArea)
+		Globals.health -= 10
 
 func _onNoticeAreaBodyEntered(_body):
 	print("Player entered notice area")
@@ -55,3 +79,6 @@ func _onAttackAreaBodyExited(_body):
 func _onAttackTimerTimeout():
 	isAttackOnCooldown = false
 	
+func _onHitCooldownTimeout():
+	vulnerable = true
+	$AnimatedSprite2D.material.set_shader_parameter("progress", 0)
