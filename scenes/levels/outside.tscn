@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b20bams2spw5l" path="res://scenes/objects/toilet.tscn" id="16_uaeil"]
 [ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="16_x30qc"]
 [ext_resource type="PackedScene" uid="uid://c8cexp3jx55br" path="res://scenes/player/girl_model.tscn" id="18_bjulg"]
+[ext_resource type="PackedScene" uid="uid://daoa3hhkby018" path="res://scenes/enemies/bug.tscn" id="19_gd7nx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
 resource_name = "walls"
@@ -132,5 +133,8 @@ position = Vector2(-295, 260)
 
 [node name="girlModel" parent="." index="15" unique_id=152654428 instance=ExtResource("18_bjulg")]
 position = Vector2(1006, 1936)
+
+[node name="Bug" parent="." index="16" unique_id=2121517768 instance=ExtResource("19_gd7nx")]
+position = Vector2(2629, 418)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
