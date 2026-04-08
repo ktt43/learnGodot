@@ -32,7 +32,7 @@ texture = ExtResource("1_5pofk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059100588]
 shape = SubResource("CircleShape2D_5pofk")
 
-[node name="Timer" type="Timer" parent="." unique_id=615801413 groups=["Entity"]]
+[node name="Timer" type="Timer" parent="." unique_id=615801413]
 wait_time = 0.216
 one_shot = true
 

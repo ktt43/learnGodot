@@ -1,8 +1,12 @@
-res://scenes/enemies/bug.gd
-res://scenes/enemies/bug.tscn
+res://scenes/enemies/drone.tscn
 res://scenes/levels/Floor.tres
 res://scenes/levels/InteriorWalls.tres
 res://scenes/levels/OuterWalls.tres
 res://scenes/enemies/scout.gdshader
-res://scenes/levels/inside.tscn
 res://scenes/enemies/bug.gdshader
+res://scenes/levels/outside.tscn
+res://scenes/enemies/drone.gd
+res://scenes/enemies/drone.gdshader
+res://scenes/player/player.tscn
+res://scenes/enemies/car.tscn
+res://scenes/enemies/car.gd

@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="16_x30qc"]
 [ext_resource type="PackedScene" uid="uid://c8cexp3jx55br" path="res://scenes/player/girl_model.tscn" id="18_bjulg"]
 [ext_resource type="PackedScene" uid="uid://daoa3hhkby018" path="res://scenes/enemies/bug.tscn" id="19_gd7nx"]
+[ext_resource type="PackedScene" uid="uid://ds26m17e75n55" path="res://scenes/enemies/car.tscn" id="20_4lnny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lnny"]
 resource_name = "walls"
@@ -53,6 +54,12 @@ texture_region_size = Vector2i(390, 390)
 tile_size = Vector2i(390, 390)
 sources/0 = SubResource("TileSetAtlasSource_4lnny")
 sources/1 = SubResource("TileSetAtlasSource_cnio0")
+
+[sub_resource type="Curve2D" id="Curve2D_gd7nx"]
+_data = {
+"points": PackedVector2Array(127.82255, 596.4018, -127.82255, -596.4018, -831, -1005, -215.28008, 131.89655, 215.28008, -131.89655, -138, -1408, -208.55258, -309.46512, 208.55258, 309.46512, 817, -1382, -417.10516, 53.820023, 417.10516, -53.820023, 1107, -991, 0, 0, 0, 0, 1356, -1139.0574, 0, 0, 0, 0, 1833, -1456, -242.1901, -403.65018, 242.1901, 403.65018, 2425, -1294, 0, 0, 0, 0, 1631, -800.6482, 222.00758, -91.75412, -222.00758, 91.75412, -360, -771.666, 0, 0, 0, 0, -831, -1005)
+}
+point_count = 10
 
 [node name="Outside" unique_id=1460552307 instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_wq65m")
@@ -123,7 +130,7 @@ position = Vector2(-93, 942)
 
 [node name="Drone" parent="." index="7" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
 z_index = 1
-position = Vector2(-856, 1097)
+position = Vector2(2292, 1540)
 
 [node name="Item" parent="." index="11" unique_id=1997271300 instance=ExtResource("16_x30qc")]
 position = Vector2(1014, 252)
@@ -136,5 +143,14 @@ position = Vector2(1006, 1936)
 
 [node name="Bug" parent="." index="16" unique_id=2121517768 instance=ExtResource("19_gd7nx")]
 position = Vector2(2629, 418)
+
+[node name="CarPath" type="Path2D" parent="." index="17" unique_id=1151975921]
+position = Vector2(-91.25549, 70.236465)
+scale = Vector2(0.8922287, 1.0488355)
+curve = SubResource("Curve2D_gd7nx")
+
+[node name="Car" parent="CarPath" index="0" unique_id=478308832 instance=ExtResource("20_4lnny")]
+position = Vector2(-831, -1005)
+rotation = -1.7819252
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
