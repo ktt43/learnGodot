@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b20bams2spw5l" path="res://scenes/objects/toilet.tscn" id="16_uaeil"]
 [ext_resource type="PackedScene" uid="uid://dlybctey16pg8" path="res://scenes/Items/item.tscn" id="16_x30qc"]
 [ext_resource type="PackedScene" uid="uid://c8cexp3jx55br" path="res://scenes/player/girl_model.tscn" id="18_bjulg"]
+[ext_resource type="PackedScene" uid="uid://cl7rsphktyew" path="res://scenes/enemies/hunter.tscn" id="19_cnio0"]
 [ext_resource type="PackedScene" uid="uid://daoa3hhkby018" path="res://scenes/enemies/bug.tscn" id="19_gd7nx"]
 [ext_resource type="PackedScene" uid="uid://ds26m17e75n55" path="res://scenes/enemies/car.tscn" id="20_4lnny"]
 
@@ -26,15 +27,25 @@ resource_name = "walls"
 texture = ExtResource("7_x30qc")
 texture_region_size = Vector2i(390, 390)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, -59.630157, 195, 50.21483, -62.768585, 56.49173, -59.630157, -65.90703)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, -53.353317, 195, 50.214874, -195, 47.076447, -195, -50.214874)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 59.630157, -195, -50.21483, 62.768585, -56.49173, 59.630157, 65.90703)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(59.630157, 195, -50.21483, 195, -56.49173, -62.768585, 65.90703, -59.630157)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-53.353302, -62.768585, 195, -62.768585, 195, 47.076416, 53.353302, 50.214844, 47.076447, 195, -50.214874, 195)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(62.768585, -53.353302, 62.768585, 195, -47.076416, 195, -50.214844, 53.353302, -195, 47.076447, -195, -50.214874)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.768585, 53.353302, -62.768585, -195, 47.076416, -195, 50.214844, -53.353302, 56.49173, 195, -56.491714, 195)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.768585, 53.353302, -62.768585, -195, 47.076416, -195, 50.214844, -53.353302, 195, -47.076447, 195, 50.214874)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(53.353302, 62.768585, -195, 62.768585, -195, -47.076416, -53.353302, -50.214844, -47.076447, -195, 50.214874, -195)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-59.630157, -195, 50.21483, -195, 56.49173, 62.768585, -65.90703, 59.630157)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnio0"]
 resource_name = " soil"
@@ -52,6 +63,8 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_6u4a0"]
 tile_size = Vector2i(390, 390)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
 sources/0 = SubResource("TileSetAtlasSource_4lnny")
 sources/1 = SubResource("TileSetAtlasSource_cnio0")
 
@@ -60,6 +73,11 @@ _data = {
 "points": PackedVector2Array(127.82255, 596.4018, -127.82255, -596.4018, -831, -1005, -215.28008, 131.89655, 215.28008, -131.89655, -138, -1408, -208.55258, -309.46512, 208.55258, 309.46512, 817, -1382, -417.10516, 53.820023, 417.10516, -53.820023, 1107, -991, 0, 0, 0, 0, 1356, -1139.0574, 0, 0, 0, 0, 1833, -1456, -242.1901, -403.65018, 242.1901, 403.65018, 2425, -1294, 0, 0, 0, 0, 1631, -800.6482, 222.00758, -91.75412, -222.00758, 91.75412, -360, -771.666, 0, 0, 0, 0, -831, -1005)
 }
 point_count = 10
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cnio0"]
+vertices = PackedVector2Array(4267.242, -481.03125, 4284.6875, 129.75, 4022, 123.77344, 3903.4297, -521.9922, 2255.7813, 1713.8594, 2207.2188, -516.03125, 4022, 1690.1328)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2197, -526, 3904, -532, 4277, -490, 4295, 140, 4032, 134, 4032, 1700, 2246, 1724)])
 
 [node name="Outside" unique_id=1460552307 instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_wq65m")
@@ -113,11 +131,11 @@ position = Vector2(339, 771)
 texture = ExtResource("6_ex6t8")
 
 [node name="Soils" type="TileMapLayer" parent="Ground" index="5" unique_id=331609701]
-tile_map_data = PackedByteArray("AAD9/wEAAQABAAEAAAD9/wAAAQABAAEAAAD9////AQABAAEAAAD9/wIAAQABAAEAAAD9//7/AQABAAEAAAAFAP7/AAACAAEAAAAFAP//AAAAAAIAAAAFAAAAAAAAAAIAAAAFAAEAAAAAAAIAAAAFAAIAAAAAAAIAAAAAAAIAAQAAAAIAAAABAAIAAQABAAIAAAACAAIAAQABAAIAAAADAAIAAQACAAIAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQACAAAAAAAAAAEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9/wEAAQABAAEAAAD9/wAAAQABAAEAAAD9////AQABAAEAAAD9/wIAAQABAAEAAAD9//7/AQABAAEAAAAAAAIAAQAAAAIAAAABAAIAAQABAAIAAAACAAIAAQABAAIAAAADAAIAAQACAAIAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQACAAAAAAAAAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_6u4a0")
 
 [node name="Walls" type="TileMapLayer" parent="Ground" index="6" unique_id=1678403662]
-tile_map_data = PackedByteArray("AAD9/wEAAAAAAAIAAAD9/wAAAAAAAAIAAAD9////AAAAAAIAAAD9/wIAAAAAAAIAAAD9//7/AAABAAEAAAAFAP7/AAACAAEAAAAFAP//AAAAAAIAAAAFAAAAAAAAAAIAAAAFAAEAAAAAAAIAAAAFAAIAAAAAAAIAAAACAAIAAAABAAAAAAABAAIAAAABAAAAAAAAAAIAAAABAAIAAAADAAIAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAIAAAD9/wAAAAAAAAIAAAD9////AAAAAAIAAAD9/wIAAAAAAAIAAAD9//7/AAABAAEAAAAFAAAAAAAAAAIAAAAFAAEAAAAAAAIAAAAFAAIAAAAAAAIAAAAFAP//AAAAAAIAAAAFAP7/AAABAAEAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAAIAAAAAAAAAAEAAAAIAAEAAAAAAAIAAAAIAAIAAAACAAIAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAKAAQAAAACAAIAAAAKAAIAAAAAAAIAAAAKAAEAAAAAAAIAAAAKAAAAAAABAAEAAAAKAAMAAAAAAAIAAAAHAAIAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_6u4a0")
 
 [node name="House" parent="Ground" index="7" unique_id=1396716363 instance=ExtResource("9_bjulg")]
@@ -130,7 +148,7 @@ position = Vector2(-93, 942)
 
 [node name="Drone" parent="." index="7" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
 z_index = 1
-position = Vector2(2292, 1540)
+position = Vector2(2292, 2538)
 
 [node name="Item" parent="." index="11" unique_id=1997271300 instance=ExtResource("16_x30qc")]
 position = Vector2(1014, 252)
@@ -141,10 +159,14 @@ position = Vector2(-295, 260)
 [node name="girlModel" parent="." index="15" unique_id=152654428 instance=ExtResource("18_bjulg")]
 position = Vector2(1006, 1936)
 
-[node name="Bug" parent="." index="16" unique_id=2121517768 instance=ExtResource("19_gd7nx")]
-position = Vector2(2629, 418)
+[node name="Hunter" parent="." index="16" unique_id=982930561 instance=ExtResource("19_cnio0")]
+position = Vector2(3120, 797.00037)
+scale = Vector2(0.4, 0.4)
 
-[node name="CarPath" type="Path2D" parent="." index="17" unique_id=1151975921]
+[node name="Bug" parent="." index="17" unique_id=2121517768 instance=ExtResource("19_gd7nx")]
+position = Vector2(3248, 2538.0002)
+
+[node name="CarPath" type="Path2D" parent="." index="18" unique_id=1151975921]
 position = Vector2(-91.25549, 70.236465)
 scale = Vector2(0.8922287, 1.0488355)
 curve = SubResource("Curve2D_gd7nx")
@@ -152,5 +174,11 @@ curve = SubResource("Curve2D_gd7nx")
 [node name="Car" parent="CarPath" index="0" unique_id=478308832 instance=ExtResource("20_4lnny")]
 position = Vector2(-831, -1005)
 rotation = -1.7819252
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="19" unique_id=1661612515]
+navigation_polygon = SubResource("NavigationPolygon_cnio0")
+
+[node name="Crate3" parent="." index="20" unique_id=783879877 instance=ExtResource("14_ex6t8")]
+position = Vector2(2753, 392)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
