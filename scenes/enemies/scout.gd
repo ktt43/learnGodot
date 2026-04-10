@@ -42,6 +42,7 @@ func hit():
 		$Node/DamageCooldown.start()
 		$Sprite2D.material.set_shader_parameter("progress", 1)
 		health -= 25
+		$AudioStreamPlayer2D.play()
 		if health <= 0:
 			queue_free()	
 		damage_cooldown = false

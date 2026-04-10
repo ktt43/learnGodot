@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://uw81ghixgpqk" path="res://scenes/projectiles/laser.gd" id="1_e6ads"]
 [ext_resource type="Texture2D" uid="uid://l3ymcsgvn3wo" path="res://graphics/projectiles/blue.png" id="1_rlgyd"]
 [ext_resource type="Texture2D" uid="uid://c32fci1hqwtou" path="res://graphics/decals/white.png" id="3_cwxws"]
+[ext_resource type="AudioStream" uid="uid://d13onm8msctby" path="res://audio/laser.wav" id="4_uxcji"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6ads"]
 radius = 6.0
@@ -50,6 +51,13 @@ process_material = SubResource("ParticleProcessMaterial_uxcji")
 [node name="Timer" type="Timer" parent="." unique_id=1111917061]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1774476999]
+
+[node name="Laser" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=2017084758]
+stream = ExtResource("4_uxcji")
+volume_db = -39.384
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_laser_time_timeout"]

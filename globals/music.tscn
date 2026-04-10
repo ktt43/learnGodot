@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvpljnajyib3w"]
+
+[ext_resource type="AudioStream" uid="uid://dqcbgfknd65ce" path="res://audio/battleThemeA.mp3" id="1_q3wc6"]
+
+[node name="Music" type="Node" unique_id=1799756872]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1552647300]
+stream = ExtResource("1_q3wc6")
+volume_db = -50.175

@@ -3,7 +3,13 @@ extends Node
 signal stat_change
 var player_pos: Vector2
 
+var player_hit_sound = AudioStreamPlayer2D
 
+
+func _ready():
+	player_hit_sound = AudioStreamPlayer2D.new()
+	player_hit_sound.stream = load('res://audio/solid_impact.ogg')
+	add_child(player_hit_sound)
 var laser_amount = 20:
 	get:
 		#print(laser_amount)
@@ -33,6 +39,7 @@ var health = 20:
 			health = value
 			player_vulnerable = false
 			player_vulnerable_timer()
+			player_hit_sound.play()
 		#Player can always pick up health, even if they are invulnerable. Max Health is 100
 		elif value > health:
 			health = min(value, 100)

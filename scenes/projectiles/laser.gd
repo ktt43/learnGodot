@@ -6,6 +6,7 @@ var direction: Vector2
 
 func _ready() -> void:
 	$Timer.start()
+	
 
 func _process(delta: float) -> void:
 	position += direction * speed * delta

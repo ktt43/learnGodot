@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Globals="*uid://doh8nhyjweuyt"
 TransitionLayer="*uid://dyj02rwjgbdeq"
+Music="*uid://dvpljnajyib3w"
+
+[display]
+
+mouse_cursor/custom_image="uid://btvupnps73iwd"
+mouse_cursor/custom_image_hotspot=Vector2(17, 17)
 
 [global_group]
 

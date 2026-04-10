@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bg8mpjkyqr3tk" path="res://scenes/enemies/drone.gd" id="1_y3ws1"]
 [ext_resource type="Texture2D" uid="uid://c4uy0tr4o7snk" path="res://graphics/enemies/drone.png" id="1_y6iu8"]
 [ext_resource type="Texture2D" uid="uid://df3venpxhoid6" path="res://graphics/explosions/explosion_3.png" id="3_dyfay"]
+[ext_resource type="AudioStream" uid="uid://uyn7beqojt7f" path="res://audio/solid_impact.ogg" id="5_cq5ml"]
+[ext_resource type="AudioStream" uid="uid://bhqrosryqh68t" path="res://audio/explosion.wav" id="6_md0p7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgp3v"]
 shader = ExtResource("1_xgp3v")
@@ -84,6 +86,21 @@ tracks/4/keys = {
 "method": &"stopMovement"
 }]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node/ExplosionSound")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_md0p7")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_lt60k"]
 length = 0.001
@@ -171,3 +188,12 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius" unique_id=1937964094]
 shape = SubResource("CircleShape2D_xgp3v")
+
+[node name="Node" type="Node2D" parent="." unique_id=739776569]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Node" unique_id=100886696]
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("5_cq5ml")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="Node" unique_id=2046326674]
+volume_db = -31.575

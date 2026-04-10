@@ -24,11 +24,16 @@ func _process(delta):
 
 
 func hit():
+	
 	if(vulnerable):
+		$Node/HitSound.play()
+		
+		print($Node/HitSound.playing)
 		vulnerable = false
 		$HitTimer.start()
 		health -= 10
 		$Sprite2D.material.set_shader_parameter("progress",.5)
+		
 		if(health <= 0):
 			explode()
 	

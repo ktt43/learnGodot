@@ -6,6 +6,8 @@ var inAttackArea = false
 var speed = 300
 var vulnerable: bool = true
 var health = 100
+var player_hit_sound: AudioStreamPlayer2D
+# var bugHitSound: AudioStreamPlayer2D
 
 func _ready():
 	$AttackCooldown.timeout.connect(_onAttackTimerTimeout)
@@ -15,8 +17,12 @@ func _ready():
 	$AttackArea2D.body_exited.connect(_onAttackAreaBodyExited)
 	$AnimatedSprite2D.animation_finished.connect(_onAnimationFinished)
 	$HitCooldown.timeout.connect(_onHitCooldownTimeout)
-
 	$AnimatedSprite2D.material = $AnimatedSprite2D.material.duplicate()
+
+	# bugHitSound = AudioStreamPlayer2D.new()
+	# bugHitSound.stream = load('res://audio/bug_hit.ogg')
+	# add_child(bugHitSound)
+
 
 func _process(_delta: float) -> void:
 	if(inAttackArea):
@@ -49,6 +55,7 @@ func hit():
 		$Particles/HitParticles.emitting = true
 		vulnerable = false
 		$HitCooldown.start()
+		$AudioStreamPlayer2D.play()
 		health -= 25
 		if(health <= 0):
 			await get_tree().create_timer(0.5).timeout
@@ -82,3 +89,4 @@ func _onAttackTimerTimeout():
 func _onHitCooldownTimeout():
 	vulnerable = true
 	$AnimatedSprite2D.material.set_shader_parameter("progress", 0)
+

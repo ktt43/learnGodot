@@ -146,39 +146,95 @@ metadata/_edit_lock_ = true
 [node name="SteamVent" parent="Ground" index="8" unique_id=379875393 instance=ExtResource("10_gd7nx")]
 position = Vector2(-93, 942)
 
-[node name="Drone" parent="." index="7" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
-z_index = 1
-position = Vector2(2292, 2538)
-
-[node name="Item" parent="." index="11" unique_id=1997271300 instance=ExtResource("16_x30qc")]
+[node name="Item" parent="." index="10" unique_id=1997271300 instance=ExtResource("16_x30qc")]
 position = Vector2(1014, 252)
 
 [node name="Scout" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="0" unique_id=952413612 instance=ExtResource("16_bjulg")]
-position = Vector2(-295, 260)
+position = Vector2(5901, -445)
 
-[node name="girlModel" parent="." index="15" unique_id=152654428 instance=ExtResource("18_bjulg")]
+[node name="Scout2" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="1" unique_id=519381249 instance=ExtResource("16_bjulg")]
+position = Vector2(6271, 480)
+
+[node name="Scout3" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="2" unique_id=2097518487 instance=ExtResource("16_bjulg")]
+position = Vector2(5646, -624)
+
+[node name="Scout4" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="3" unique_id=2076542850 instance=ExtResource("16_bjulg")]
+position = Vector2(5901, 511)
+
+[node name="Drone" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="4" unique_id=372226932 instance=ExtResource("15_ex6t8")]
+z_index = 1
+position = Vector2(4508, 279)
+
+[node name="Drone2" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="5" unique_id=1790176853 instance=ExtResource("15_ex6t8")]
+z_index = 1
+position = Vector2(5037, 268)
+
+[node name="Drone3" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="6" unique_id=390651648 instance=ExtResource("15_ex6t8")]
+z_index = 1
+position = Vector2(5037, -476)
+
+[node name="Drone5" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="7" unique_id=1064219604 instance=ExtResource("15_ex6t8")]
+z_index = 1
+position = Vector2(4761, 244)
+
+[node name="Drone6" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="8" unique_id=2078777482 instance=ExtResource("15_ex6t8")]
+z_index = 1
+position = Vector2(4761, -489)
+
+[node name="Drone4" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="9" unique_id=661937928 instance=ExtResource("15_ex6t8")]
+z_index = 1
+position = Vector2(4508, -489)
+
+[node name="newDrone" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="10" unique_id=614021058 instance=ExtResource("15_ex6t8")]
+position = Vector2(5222, 267.99988)
+scale = Vector2(0.36, 0.36)
+
+[node name="Bug" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="11" unique_id=2121517768 instance=ExtResource("19_gd7nx")]
+position = Vector2(7032, 163.00018)
+
+[node name="Bug2" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="12" unique_id=699017946 instance=ExtResource("19_gd7nx")]
+position = Vector2(7291, 162.99994)
+
+[node name="Bug3" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="13" unique_id=1364047855 instance=ExtResource("19_gd7nx")]
+position = Vector2(7032, 297.99994)
+
+[node name="Bug4" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="14" unique_id=178391663 instance=ExtResource("19_gd7nx")]
+position = Vector2(7347, 372.99994)
+
+[node name="Hunter2" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="15" unique_id=982930561 instance=ExtResource("19_cnio0")]
+position = Vector2(3793, -75)
+
+[node name="Hunter" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="16" unique_id=1541412041 instance=ExtResource("19_cnio0")]
+position = Vector2(3383, -215)
+scale = Vector2(0.5, 0.5)
+
+[node name="Hunter3" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="17" unique_id=1839014962 instance=ExtResource("19_cnio0")]
+position = Vector2(2431, 138)
+scale = Vector2(0.5, 0.5)
+
+[node name="Hunter4" parent="Enemies" parent_id_path=PackedInt32Array(1518736195) index="18" unique_id=307428972 instance=ExtResource("19_cnio0")]
+position = Vector2(3112, 203)
+scale = Vector2(0.5, 0.5)
+
+[node name="girlModel" parent="." index="14" unique_id=152654428 instance=ExtResource("18_bjulg")]
 position = Vector2(1006, 1936)
 
-[node name="Hunter" parent="." index="16" unique_id=982930561 instance=ExtResource("19_cnio0")]
-position = Vector2(3120, 797.00037)
-scale = Vector2(0.4, 0.4)
-
-[node name="Bug" parent="." index="17" unique_id=2121517768 instance=ExtResource("19_gd7nx")]
-position = Vector2(3248, 2538.0002)
-
-[node name="CarPath" type="Path2D" parent="." index="18" unique_id=1151975921]
-position = Vector2(-91.25549, 70.236465)
-scale = Vector2(0.8922287, 1.0488355)
+[node name="CarPath" type="Path2D" parent="." index="15" unique_id=1151975921]
+position = Vector2(7162, 491.0005)
+scale = Vector2(0.88776827, 1.0029099)
 curve = SubResource("Curve2D_gd7nx")
+metadata/_edit_group_ = true
 
 [node name="Car" parent="CarPath" index="0" unique_id=478308832 instance=ExtResource("20_4lnny")]
 position = Vector2(-831, -1005)
 rotation = -1.7819252
+metadata/_edit_lock_ = true
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="19" unique_id=1661612515]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" unique_id=1661612515]
 navigation_polygon = SubResource("NavigationPolygon_cnio0")
+metadata/_edit_lock_ = true
 
-[node name="Crate3" parent="." index="20" unique_id=783879877 instance=ExtResource("14_ex6t8")]
-position = Vector2(2753, 392)
+[node name="Crate3" parent="." index="17" unique_id=783879877 instance=ExtResource("14_ex6t8")]
+position = Vector2(2719, -452)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

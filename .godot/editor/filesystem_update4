@@ -5,7 +5,5 @@ res://scenes/levels/OuterWalls.tres
 res://scenes/enemies/drone.gdshader
 res://scenes/enemies/scout.gdshader
 res://scenes/enemies/bug.gdshader
-res://scenes/enemies/car.gd
-res://scenes/enemies/hunter.tscn
-res://scenes/enemies/bug.tscn
 res://scenes/enemies/hunter.gd
+res://scenes/enemies/hunter.tscn
